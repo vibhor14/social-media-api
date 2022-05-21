@@ -6,7 +6,7 @@ module.exports = function (req,res,next){
     if(!token) res.status(401).send("FORBIDDEN !!");
 
     try{
-        const verified = jwt.verify(token,process.env.TOKEN_SECRET);
+        const verified = jwt.verify(token,"somethingintheway");
         req.user = verified;
         //console.log(verified);
         next();
