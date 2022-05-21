@@ -16,7 +16,7 @@ router.post("/", async (req,res)=>{
         return res.status(400).send("Wrong Password.");
     } 
     //assign jwt-token
-    const token = jwt.sign({_id: userFound._id},process.env.TOKEN_SECRET);
+    const token = jwt.sign({_id: userFound._id},"somethingintheway");
     res.header("auth_token",token).send(token);
 
 })
