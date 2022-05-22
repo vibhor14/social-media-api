@@ -13,7 +13,7 @@ app.use(express.json());
 
 //connect to DB
 
-mongoose.connect("mongodb+srv://admin-vibhor:atlas!$@cluster0.4glif.mongodb.net/Project02?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://admin-vibhor:"+process.env.MONGODB_PASSWORD+"@cluster0.4glif.mongodb.net/Project02?retryWrites=true&w=majority",{
     useNewUrlParser: true,
     useUnifiedTopology: true,
   },
